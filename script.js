@@ -42,44 +42,6 @@ if (heroEl) {
   });
 }
 
-const terminalLine = document.getElementById('terminal-line');
-const terminalLog = [
-  '> scanning workflow... 14 slow steps found',
-  '> biggest delay found: customers waiting 38% too long',
-  '> fixing the process...',
-  '> turning on automation... done',
-  '> process running smoothly. time saved: 42%',
-];
-
-if (terminalLine) {
-  let lineIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
-
-  const tick = () => {
-    const current = terminalLog[lineIndex];
-    if (!deleting) {
-      charIndex++;
-      terminalLine.textContent = current.slice(0, charIndex);
-      if (charIndex === current.length) {
-        deleting = true;
-        setTimeout(tick, 1600);
-        return;
-      }
-    } else {
-      charIndex--;
-      terminalLine.textContent = current.slice(0, charIndex);
-      if (charIndex === 0) {
-        deleting = false;
-        lineIndex = (lineIndex + 1) % terminalLog.length;
-      }
-    }
-    setTimeout(tick, deleting ? 20 : 35);
-  };
-
-  tick();
-}
-
 const sections = document.querySelectorAll('.section, .hero');
 
 const observer = new IntersectionObserver((entries) => {
