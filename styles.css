@@ -91,6 +91,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 .hero {
   padding: 140px 0 100px;
   position: relative;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -357,7 +358,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   padding: 14px 16px;
   color: var(--fg);
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 16px;
   resize: vertical;
   transition: border-color 0.2s, background 0.2s;
 }
@@ -410,5 +411,24 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   main { padding: 0 24px; }
   .section--alt { margin: 0 -24px; padding: 72px 24px; }
   .hero { padding: 100px 0 64px; }
-  .footer { padding: 24px; }
+  .hero__cta { flex-direction: column; align-items: stretch; }
+  .hero__cta .btn { text-align: center; }
+  .terminal { max-width: 100%; }
+  .contact-form { padding: 24px; }
+  .footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .nav { flex-wrap: wrap; gap: 10px; padding: 14px 20px; }
+  .nav__brand { flex: 1 1 100%; }
+  .nav__links { gap: 14px; font-size: 12px; }
+  main { padding: 0 20px; }
+  .section--alt { margin: 0 -20px; padding: 56px 20px; }
+  .hero { padding: 80px 0 48px; }
+  .hero__title { font-size: clamp(32px, 9vw, 44px); }
+  .hero__sub { font-size: 16px; }
+  .section { padding: 64px 0; }
+  .section__head h2 { font-size: clamp(24px, 7vw, 30px); }
+  .team-grid { gap: 20px; }
+  .btn--lg { padding: 16px 24px; font-size: 15px; }
 }
