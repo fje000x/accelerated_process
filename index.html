@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accelerated Process | Save Time, Improve Profitability</title>
+<meta name="description" content="Accelerated Process Improvement LLC — we use Lean Six Sigma and AI to fix slow processes, saving your business time and money.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-noise"></div>
+
+<header class="nav">
+  <div class="nav__brand">
+    <span class="nav__name">ACCELERATED PROCESS</span>
+  </div>
+  <nav class="nav__links">
+    <a href="#about">About</a>
+    <a href="#founders">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1 class="hero__title">
+      Stop losing time and money<br>
+      to a <span class="accent">broken process</span>.
+    </h1>
+    <p class="hero__sub">
+      Every wasted hour and slow handoff is costing you money. We find
+      exactly where your business — or your software — is bleeding time,
+      fix it using Lean Six Sigma and AI, and stay until it's running clean.
+      No slide decks. No 6-month engagements. Just results you can measure.
+    </p>
+    <div class="hero__cta">
+      <a href="#contact" class="btn btn--primary">Get a free process audit</a>
+      <a href="#about" class="btn btn--ghost">See how it works ↓</a>
+    </div>
+
+    <div class="terminal" id="hero-terminal">
+      <div class="terminal__bar">
+        <span class="terminal__dot"></span>
+        <span class="terminal__dot"></span>
+        <span class="terminal__dot"></span>
+        <span class="terminal__title">process_diagnostic.log</span>
+      </div>
+      <div class="terminal__body">
+        <pre class="terminal__line" id="terminal-line"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section__head">
+      <h2>About Accelerated Process</h2>
+    </div>
+    <p class="section__body">
+      If you're spending more time managing your operations than growing
+      your business, something in your process is broken — and it's
+      costing you real money every single day. That's what we fix.
+    </p>
+    <p class="section__body">
+      Accelerated Process Improvement LLC was founded by two engineers who
+      bring together <strong>hands-on Lean Six Sigma experience improving
+      operations at a Fortune 1 company</strong> with deep expertise in
+      software and AI. Most consultants stop at a report. We don't — we
+      also build the automation and tools that make the fix run itself.
+    </p>
+    <p class="section__body">
+      We show up on-site, find where your time and money are actually
+      leaking — in your workflows or your software — and stay hands-on
+      through <strong>full implementation</strong>, not just
+      recommendations on paper.
+    </p>
+  </section>
+
+  <section id="founders" class="section">
+    <div class="section__head">
+      <h2>Founding Team</h2>
+    </div>
+    <div class="team-grid">
+      <article class="team-card">
+        <div class="team-card__img">
+          <img src="assets/founder1-photo.png" alt="Fernando, Co-Founder and CEO">
+        </div>
+        <h3>Co-Founder &amp; CEO</h3>
+        <span class="team-card__role">Automation &amp; Process Improvement</span>
+        <p>
+          Hands-on experience improving operations at one of the world's
+          largest companies. Uses Lean Six Sigma to find what's slowing a
+          business down and fix it in ways you can measure.
+        </p>
+        <a href="mailto:fernandoerazo@acceleratedprocess.com" class="team-card__email">
+          fernandoerazo@acceleratedprocess.com
+        </a>
+      </article>
+      <article class="team-card">
+        <div class="team-card__img">
+          <img src="assets/cto.png" alt="Co-founder portrait, automation and systems lead">
+        </div>
+        <h3>Co-Founder &amp; CTO</h3>
+        <span class="team-card__role">Software &amp; AI Automation</span>
+        <p>
+          Builds the software and AI tools that turn a better process into
+          something that runs on its own — saving your team time every day.
+        </p>
+        <a href="mailto:sebastianduran@acceleratedprocess.com" class="team-card__email">
+          sebastianduran@acceleratedprocess.com
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section section--alt contact">
+    <div class="contact-layout">
+      <div class="contact-intro">
+        <div class="section__head">
+          <h2>Find out what's costing you.</h2>
+        </div>
+        <p class="section__body">
+          Tell us what's slow, manual, or breaking. We'll get back to you
+          within 24 hours with a free process audit — no obligation.
+        </p>
+      </div>
+
+      <form id="contact-form" class="contact-form">
+        <input type="hidden" name="title" value="New website inquiry">
+        <div class="contact-form__field">
+          <label for="from_name">Name</label>
+          <input id="from_name" type="text" name="name" placeholder="Jane Doe" required>
+        </div>
+        <div class="contact-form__field">
+          <label for="reply_to">Email</label>
+          <input id="reply_to" type="email" name="email" placeholder="jane@company.com" required>
+        </div>
+        <div class="contact-form__field">
+          <label for="company">Company</label>
+          <input id="company" type="text" name="company" placeholder="Acme Inc.">
+        </div>
+        <div class="contact-form__field">
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" name="phone" placeholder="(555) 555-5555">
+        </div>
+        <div class="contact-form__field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="What's costing you the most time right now? (Include what kind of help you're looking for — process improvement, automation/AI, or both.)" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg contact-form__submit">
+          <span>Send message</span>
+        </button>
+        <p id="contact-form__status" class="contact-form__status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>© 2026 Accelerated Process Improvement LLC</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js?v=2"></script>
+</body>
+</html>
