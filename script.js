@@ -113,3 +113,24 @@ const navObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
 
 navTargets.forEach((el) => navObserver.observe(el));
+
+const navToggle = document.getElementById('nav-toggle');
+const navLinksList = document.getElementById('nav-links');
+
+if (navToggle && navLinksList) {
+  const closeMenu = () => {
+    navToggle.classList.remove('is-open');
+    navLinksList.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinksList.classList.toggle('is-open');
+    navToggle.classList.toggle('is-open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navLinksList.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+}
