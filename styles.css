@@ -181,15 +181,26 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 .section--alt { background: var(--bg-alt); margin: 0 -48px; padding: 96px 48px; }
 
 .section--light {
-  background: #ffffff;
+  position: relative;
+  border-top: none;
   --fg: #0a0a0a;
   --fg-dim: #5a5a5a;
   --border: #e2e2e2;
   --accent: #0a0a0a;
   --accent-2: #0a0a0a;
   color: var(--fg);
-  margin: 0 -48px;
-  padding: 96px 48px;
+}
+.section--light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border-top: 1px solid #e2e2e2;
+  z-index: -1;
 }
 .section--light .approach-card,
 .section--light .team-card { background: rgba(0,0,0,0.02); }
@@ -442,7 +453,6 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   .approach-grid--pairs { grid-template-columns: 1fr; }
   main { padding: 0 24px; }
   .section--alt { margin: 0 -24px; padding: 72px 24px; }
-  .section--light { margin: 0 -24px; padding: 72px 24px; }
   .hero { padding: 100px 0 64px; }
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .btn { text-align: center; }
@@ -454,7 +464,6 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   .nav { padding: 14px 20px; }
   main { padding: 0 20px; }
   .section--alt { margin: 0 -20px; padding: 56px 20px; }
-  .section--light { margin: 0 -20px; padding: 56px 20px; }
   .hero { padding: 80px 0 48px; }
   .hero__title { font-size: clamp(32px, 9vw, 44px); }
   .hero__sub { font-size: 16px; }
