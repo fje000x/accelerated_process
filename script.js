@@ -35,11 +35,17 @@ if (contactForm) {
 
 const heroEl = document.querySelector('.hero');
 if (heroEl) {
-  heroEl.addEventListener('mousemove', (e) => {
-    const rect = heroEl.getBoundingClientRect();
-    heroEl.style.setProperty('--glow-x', `${e.clientX - rect.left}px`);
-    heroEl.style.setProperty('--glow-y', `${e.clientY - rect.top}px`);
+  window.addEventListener('mousemove', (e) => {
+    heroEl.style.setProperty('--glow-x', `${e.clientX}px`);
+    heroEl.style.setProperty('--glow-y', `${e.clientY}px`);
   });
+
+  const heroGlowObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      heroEl.classList.toggle('is-glow-active', entry.isIntersecting);
+    });
+  }, { threshold: 0 });
+  heroGlowObserver.observe(heroEl);
 }
 
 const sections = document.querySelectorAll('.section, .hero');

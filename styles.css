@@ -24,9 +24,10 @@ body {
 }
 
 .bg-grid {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -2;
+  pointer-events: none;
   background-image:
     linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
@@ -121,7 +122,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 
 .hero::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: var(--glow-y, 20%);
   left: var(--glow-x, 50%);
   width: 480px;
@@ -130,8 +131,10 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
   pointer-events: none;
   z-index: -1;
-  transition: top 0.15s ease, left 0.15s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
+.hero.is-glow-active::before { opacity: 1; }
 
 .hero__tag {
   font-family: var(--mono);
@@ -245,46 +248,57 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 }
 .approach-card:hover { border-color: var(--accent); transform: translateY(-3px); }
 
-.timeline { display: flex; flex-direction: column; max-width: 720px; }
-
-.timeline__step {
-  position: relative;
+.process-flow {
   display: flex;
-  gap: 24px;
-  padding-bottom: 40px;
-}
-.timeline__step:last-child { padding-bottom: 0; }
-
-.timeline__step:not(:last-child)::before {
-  content: '';
-  position: absolute;
-  left: 19px;
-  top: 40px;
-  bottom: 0;
-  width: 1px;
-  background: var(--border);
+  align-items: stretch;
 }
 
-.timeline__marker {
+.process-step {
   position: relative;
-  z-index: 1;
-  flex: 0 0 40px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  flex: 1 1 0;
+  padding: 26px 18px 20px;
   border: 1px solid var(--border);
-  background: var(--bg);
+  background: rgba(255,255,255,0.015);
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s;
+}
+.process-step:hover { border-color: var(--accent); background: rgba(255,255,255,0.03); }
+.process-step + .process-step { border-left: none; }
+
+.process-step__label {
+  position: relative;
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.process-step h3 { position: relative; font-size: 16px; margin-bottom: 8px; }
+.process-step p { position: relative; color: var(--fg-dim); font-size: 13.5px; min-height: 60px; }
+
+.process-connector {
+  flex: 0 0 auto;
+  width: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--border);
   font-family: var(--mono);
-  font-size: 14px;
-  color: var(--accent);
+  font-size: 16px;
 }
+.process-connector::after { content: '→'; }
 
-.timeline__content { padding-top: 6px; }
-.timeline__content h3 { font-size: 18px; margin-bottom: 6px; }
-.timeline__content p { color: var(--fg-dim); font-size: 15px; }
+@media (max-width: 900px) {
+  .process-flow { flex-direction: column; }
+  .process-step { flex: none; }
+  .process-step + .process-step { border-left: 1px solid var(--border); border-top: none; }
+  .process-step p { min-height: 0; }
+  .process-connector { width: auto; height: 24px; }
+  .process-connector::after { content: '↓'; }
+}
 
 .approach-card__icon { font-size: 28px; color: var(--accent); margin-bottom: 16px; }
 .approach-card h3 { font-size: 18px; margin-bottom: 10px; }
@@ -427,7 +441,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 }
 .footer__mark { color: var(--accent); }
 
-@media (max-width: 640px) {
+@media (max-width: 960px) {
   .nav { padding: 16px 24px; flex-wrap: wrap; }
   .nav__toggle { display: flex; }
   .nav__links {
@@ -440,11 +454,14 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
     transition: max-height 0.3s ease;
   }
   .nav__links.is-open { max-height: 400px; }
-  .approach-grid--pairs { grid-template-columns: 1fr; }
   .nav__links a {
     padding: 14px 0;
     border-top: 1px solid var(--border);
   }
+}
+
+@media (max-width: 640px) {
+  .approach-grid--pairs { grid-template-columns: 1fr; }
   main { padding: 0 24px; }
   .section--alt { margin: 0 -24px; padding: 72px 24px; }
   .section--light { margin: 0 -24px; padding: 72px 24px; }

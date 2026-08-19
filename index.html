@@ -7,17 +7,16 @@
 <meta name="description" content="Accelerated Process Consulting LLC — we find what's slowing your business down and fix it, using Lean Six Sigma and whatever tools the job calls for, software and AI included.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
-<div class="bg-grid"></div>
 <div class="bg-noise"></div>
 
 <header class="nav">
   <div class="nav__brand">
     <img src="assets/logo-white.png" alt="APC" class="nav__logo">
-    <span class="nav__name">ACCELERATED PROCESS</span>
+    <span class="nav__name">ACCELERATED PROCESS CONSULTING</span>
   </div>
   <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
     <span></span>
@@ -36,6 +35,7 @@
 <main>
 
   <section class="hero">
+    <div class="bg-grid"></div>
     <h1 class="hero__title">
       Stop losing time and money<br>
       to a <span class="accent">broken process</span>.
@@ -99,41 +99,35 @@
       A straight line from diagnosis to a working result — no phase gets
       skipped, and we don't leave until the last one's done.
     </p>
-    <div class="timeline">
-      <div class="timeline__step">
-        <div class="timeline__marker">1</div>
-        <div class="timeline__content">
-          <h3>Identify</h3>
-          <p>We come on-site and find where time and money are actually leaking.</p>
-        </div>
+    <div class="process-flow">
+      <div class="process-step">
+        <span class="process-step__label">Phase 1</span>
+        <h3>Identify</h3>
+        <p>We come on-site and find where time and money are actually leaking.</p>
       </div>
-      <div class="timeline__step">
-        <div class="timeline__marker">2</div>
-        <div class="timeline__content">
-          <h3>Analyze</h3>
-          <p>We dig into the root cause — not just the symptom you called us about.</p>
-        </div>
+      <div class="process-connector" aria-hidden="true"></div>
+      <div class="process-step">
+        <span class="process-step__label">Phase 2</span>
+        <h3>Analyze</h3>
+        <p>We dig into the root cause — not just the symptom you called us about.</p>
       </div>
-      <div class="timeline__step">
-        <div class="timeline__marker">3</div>
-        <div class="timeline__content">
-          <h3>Design</h3>
-          <p>We design the right fix, whether that's process, people, equipment, or software.</p>
-        </div>
+      <div class="process-connector" aria-hidden="true"></div>
+      <div class="process-step">
+        <span class="process-step__label">Phase 3</span>
+        <h3>Design</h3>
+        <p>We design the right fix, whether that's process, people, equipment, or software.</p>
       </div>
-      <div class="timeline__step">
-        <div class="timeline__marker">4</div>
-        <div class="timeline__content">
-          <h3>Implement</h3>
-          <p>We coordinate vendors, build the tooling, train your team, and deploy the solution.</p>
-        </div>
+      <div class="process-connector" aria-hidden="true"></div>
+      <div class="process-step">
+        <span class="process-step__label">Phase 4</span>
+        <h3>Implement</h3>
+        <p>We coordinate vendors, build the tooling, train your team, and deploy the solution.</p>
       </div>
-      <div class="timeline__step">
-        <div class="timeline__marker">5</div>
-        <div class="timeline__content">
-          <h3>Measure</h3>
-          <p>We track the result against real numbers, not a slide deck promise.</p>
-        </div>
+      <div class="process-connector" aria-hidden="true"></div>
+      <div class="process-step">
+        <span class="process-step__label">Phase 5</span>
+        <h3>Measure</h3>
+        <p>We track the result against real numbers, not a slide deck promise.</p>
       </div>
     </div>
   </section>
@@ -192,7 +186,7 @@
     </div>
   </section>
 
-  <section id="founders" class="section section--light">
+  <section id="founders" class="section">
     <div class="section__head">
       <h2>Founding Team</h2>
     </div>
@@ -281,6 +275,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="script.js?v=3"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>
