@@ -204,6 +204,21 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 .section { padding: 96px 0; border-top: 1px solid var(--border); }
 .section--alt { background: var(--bg-alt); margin: 0 -48px; padding: 96px 48px; }
 
+.section--light {
+  background: #ffffff;
+  --fg: #0a0a0a;
+  --fg-dim: #5a5a5a;
+  --border: #e2e2e2;
+  --accent: #0a0a0a;
+  --accent-2: #0a0a0a;
+  color: var(--fg);
+  margin: 0 -48px;
+  padding: 96px 48px;
+}
+.section--light .approach-card,
+.section--light .team-card { background: rgba(0,0,0,0.02); }
+.section--light .accent { text-shadow: none; }
+
 .section__head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
 .section__index { font-family: var(--mono); color: var(--accent); font-size: 14px; }
 .section__head h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 700; }
@@ -387,6 +402,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   }
   main { padding: 0 24px; }
   .section--alt { margin: 0 -24px; padding: 72px 24px; }
+  .section--light { margin: 0 -24px; padding: 72px 24px; }
   .hero { padding: 100px 0 64px; }
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .btn { text-align: center; }
@@ -398,6 +414,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   .nav { padding: 14px 20px; }
   main { padding: 0 20px; }
   .section--alt { margin: 0 -20px; padding: 56px 20px; }
+  .section--light { margin: 0 -20px; padding: 56px 20px; }
   .hero { padding: 80px 0 48px; }
   .hero__title { font-size: clamp(32px, 9vw, 44px); }
   .hero__sub { font-size: 16px; }
