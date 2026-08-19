@@ -335,6 +335,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   padding-top: 14px;
   border-top: 1px solid var(--border);
   width: 100%;
+  word-break: break-all;
   transition: color 0.2s;
 }
 .team-card__email:hover { color: var(--fg-dim); }
@@ -462,6 +463,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 
 @media (max-width: 480px) {
   .nav { padding: 14px 20px; }
+  .nav__name { display: none; }
   main { padding: 0 20px; }
   .section--alt { margin: 0 -20px; padding: 56px 20px; }
   .hero { padding: 80px 0 48px; }
