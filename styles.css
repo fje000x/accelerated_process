@@ -113,7 +113,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   font-size: 12px;
   letter-spacing: 0.15em;
   color: var(--fg-dim);
-  display: inline-block;
+  display: none;
   margin-bottom: 28px;
 }
 
@@ -314,6 +314,12 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 .team-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .team-card h3 { font-size: 18px; margin-bottom: 4px; }
+.team-card__title {
+  display: block;
+  font-size: 14px;
+  color: var(--fg-dim);
+  margin-bottom: 8px;
+}
 .team-card__role {
   display: block;
   font-family: var(--mono);
@@ -461,6 +467,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 @media (max-width: 480px) {
   .nav { padding: 14px 20px; }
   .nav__name { display: none; }
+  .hero__tag { display: inline-block; }
   main { padding: 0 20px; }
   .section--alt { margin: 0 -20px; padding: 56px 20px; }
   .hero { padding: 80px 0 48px; }
